@@ -34,6 +34,8 @@ $sql = "INSERT INTO pemesanan (nama_pemesanan, hp_pemesan, tanggal_pemesanan, ka
 
 if ($conn->query($sql) === TRUE) {
     echo "<h3>Data berhasil disimpan!</h3>";
+    $id_pemesanan = mysqli_insert_id($conn);
+    header("Location: invoice.php?id=".$id_pemesanan);
 } else {
     echo "Terjadi kesalahan: " . $conn->error . "<br>";
     echo "SQL: " . $sql . "<br>";

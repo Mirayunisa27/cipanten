@@ -20,7 +20,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" href="index.html">HOME</a>
+          <a class="nav-link" href="index.php">HOME</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#form_pemesanan">FORM PEMESANAN</a>
@@ -77,11 +77,11 @@
                     <div id="destinasi-options" class="mb-3" style="display: none;">
                         <label class="form-label">Pilih Destinasi</label>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="destinasi[]" value="20000" onchange="updateTotal()">
+                            <input class="form-check-input" type="checkbox" name="destinasi[]" value="20000" data-nama="Wahana Karpet Ajaib" onchange="updateTotal()">
                             <label class="form-check-label">Wahana Karpet Ajaib (Rp.20.000,00-)</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="destinasi[]" value="15000" onchange="updateTotal()">
+                            <input class="form-check-input" type="checkbox" name="destinasi[]" value="15000" data-nama="wahana_bebek_goes"onchange="updateTotal()">
                             <label class="form-check-label">Wahana Bebek Goes (Rp.15.000,00-)</label>
                         </div>
                         <div class="form-check">
@@ -104,7 +104,7 @@
                     <div id="kulineran-options" class="mb-3" style="display: none;">
                         <label class="form-label">Pilih Kulineran</label>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="kulineran[]" value="15000" onchange="updateTotal()">
+                            <input class="form-check-input" type="checkbox" name="pisang_crispy" value="15000" onchange="updateTotal()">
                             <label class="form-check-label">Pisang Crispy (Rp.15.000,00-)</label>
                         </div>
                         <div class="form-check">
@@ -246,6 +246,7 @@
     console.log(`Formatted Total: ${formattedTotal}`); // Debugging
 
     document.getElementById("total_harga").value = formattedTotal;
+	
 }
 
     </script>

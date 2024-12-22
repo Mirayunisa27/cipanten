@@ -127,7 +127,6 @@
                 <h5 class="card-title">Wahana Ayunan </h5>
                 <button type="button" class="btn btn-primary">
                   <a href="pesan.php" class="btn btn-primary">Pesan Sekarang</a>
-
                 </button>
               </div>
             </div>

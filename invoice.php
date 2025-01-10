@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invoice Pemesanan</title>
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <style>
         body {
@@ -87,14 +86,12 @@
         $detail = $result->fetch_assoc();
 
         // Validasi dan decode data JSON
-        $kategori = json_decode($detail['kategori'], true);
-        $destinasi = json_decode($detail['destinasi'], true);
-        $kulineran = json_decode($detail['kulineran'], true);
-
-        // Pastikan data JSON valid
-        $kategori = is_array($kategori) ? $kategori : [];
-        $destinasi = is_array($destinasi) ? $destinasi : [];
-        $kulineran = is_array($kulineran) ? $kulineran : [];
+        $kategori = json_decode($detail['kategori'], true) ?: [];
+        $destinasi = json_decode($detail['destinasi'], true) ?: [];
+        $kulineran = json_decode($detail['kulineran'], true) ?: [];
+        
+        $wahana_yang_dipilih = json_decode($detail['wahana_yang_dipilih'], true) ?: ["Wahana Karpet Ajaib, Wahana Perahu, caffe"];
+        $kulineran_yang_dipilih = json_decode($detail['kulineran_yang_dipilih'], true) ?: ["Pisang Crispy, Roti bakar"]
     ?>
     <div class="container container-invoice">
         <h2>Invoice Pemesanan #<?= htmlspecialchars($detail['id']); ?></h2>
@@ -122,18 +119,28 @@
             <?php endforeach; ?>
         </ul>
 
-        <label for="kulineran">Kulineran:</label>
+        <label for="wahana_yang_dipilih">Wahana Yang Dipilih:</label>
+        <ul>
+            <?php foreach ($wahana_yang_dipilih as $item): ?>
+                <li><?= htmlspecialchars($item); ?></li>
+            <?php endforeach; ?>
+        </ul>
+        <label for="Kulineran">Kulineran:</label>
         <ul>
             <?php foreach ($kulineran as $item): ?>
                 <li><?= htmlspecialchars($item); ?></li>
             <?php endforeach; ?>
         </ul>
-
+        <label for="kulineran_yang_dipilih">Kulineran Yang Dipilih:</label>
+        <ul>
+            <?php foreach ($kulineran_yang_dipilih as $item): ?>
+                <li><?= htmlspecialchars($item); ?></li>
+            <?php endforeach; ?>
+        </ul>
         <?php if (!empty($detail['seat_number'])): ?>
-    <label for="seat_number">Nomor Kursi:</label>
-    <p><?= htmlspecialchars($detail['seat_number']); ?></p>
-<?php endif; ?>
-
+            <label for="seat_number">Nomor Kursi:</label>
+            <p><?= htmlspecialchars($detail['seat_number']); ?></p>
+        <?php endif; ?>
 
         <label for="jumlah_peserta">Jumlah Peserta:</label>
         <p><?= htmlspecialchars($detail['jumlah_peserta']); ?></p>

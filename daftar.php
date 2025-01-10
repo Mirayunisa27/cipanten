@@ -25,6 +25,9 @@
         <li class="nav-item">
           <a class="nav-link" href="#DAFTAR_PEMESANAN">DAFTAR PEMESANAN</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="pesan.php">FORM PEMESANAN</a>
+        </li>
       </ul>
     </div>
   </div>
@@ -58,50 +61,35 @@
         if ($conn->connect_error) {
             die("<div class='alert alert-danger text-center'>Koneksi ke database gagal: " . $conn->connect_error . "</div>");
         }
-
         // Aktifkan error reporting untuk debugging
         error_reporting(E_ALL);
         ini_set('display_errors', 1);
-
+        
         // Tampilkan data pemesanan dalam tabel
         $result = $conn->query("SELECT * FROM pemesanan");
-
+        
         if ($result->num_rows > 0) {
             echo "<div class='table-responsive'>";
             echo "<table class='table table-striped table-hover table-bordered align-middle text-center'>";
             echo "<thead class='table-dark'>";
             echo "<tr>";
-            echo "<th style='width: 5%;'>ID</th>";
-            echo "<th style='width: 15%;'>Nama Pemesanan</th>";
-            echo "<th style='width: 10%;'>No. HP</th>";
-            echo "<th style='width: 12%;'>Tanggal Pemesanan</th>";
-            echo "<th style='width: 10%;'>Kategori</th>";
-            echo "<th style='width: 10%;'>Destinasi</th>";
-            echo "<th style='width: 10%;'>Kulineran</th>";
-            echo "<th style='width: 8%;'>Jumlah Peserta</th>";
-            echo "<th style='width: 10%;'>Total Harga</th>";
-
-            // Cek apakah ada data "Nomor Kursi" di setidaknya satu baris
-            $hasSeatNumber = false;
-            while ($row = $result->fetch_assoc()) {
-                if (!empty($row['seat_number'])) {
-                    $hasSeatNumber = true;
-                    break;
-                }
-            }
-            // Jika ada, tambahkan kolom "Nomor Kursi" di header
-            if ($hasSeatNumber) {
-                echo "<th style='width: 8%;'>Nomor Kursi</th>";
-            }
-
-            echo "<th style='width: 20%;'>Aksi</th>";
+            echo "<th>ID</th>";
+            echo "<th>Nama Pemesanan</th>";
+            echo "<th>No. HP</th>";
+            echo "<th>Tanggal Pemesanan</th>";
+            echo "<th>Kategori</th>";
+            echo "<th>Destinasi</th>";
+            echo "<th>Kulineran</th>";
+            echo "<th>Wahana Yang Dipilih</th>";
+            echo "<th>Kulineran Yang Dipilih</th>";
+            echo "<th>Jumlah Peserta</th>";
+            echo "<th>Total Harga</th>";
+            echo "<th>Nomor Kursi</th>";
+            echo "<th>Aksi</th>";
             echo "</tr>";
             echo "</thead>";
             echo "<tbody>";
-
-            // Reset ulang pointer hasil query
-            $result->data_seek(0);
-
+        
             while ($row = $result->fetch_assoc()) {
                 echo "<tr>";
                 echo "<td>" . htmlspecialchars($row['id']) . "</td>";
@@ -110,32 +98,35 @@
                 echo "<td>" . htmlspecialchars($row['tanggal_pemesanan']) . "</td>";
                 echo "<td>" . htmlspecialchars($row['kategori']) . "</td>";
                 echo "<td>" . htmlspecialchars($row['destinasi']) . "</td>";
-
-                // Perbaiki tampilan "Kulineran"
-                echo "<td>" . (!empty($row['kulineran']) ? htmlspecialchars($row['kulineran']) : "Tidak Memilih") . "</td>";
-
+                echo "<td>" . htmlspecialchars($row['kulineran']) . "</td>";
+        
+                // Decode JSON data
+                $wahanaYangDipilih = json_decode($row['wahana_yang_dipilih'], true);
+                echo "<td>" . (!empty($wahanaYangDipilih) && is_array($wahanaYangDipilih) ? implode(', ', $wahanaYangDipilih) : "Wahana Karpet Ajaib , Wahana Perahu, caffe") . "</td>";
+        
+                $kulineranYangDipilih = json_decode($row['kulineran_yang_dipilih'], true);
+                echo "<td>" . (!empty($kulineranYangDipilih) && is_array($kulineranYangDipilih) ? implode(', ', $kulineranYangDipilih) : "Pisang Crispy , Roti Bakar") . "</td>";
+        
                 echo "<td>" . htmlspecialchars($row['jumlah_peserta']) . "</td>";
                 echo "<td>Rp." . number_format($row['total_harga'], 0, ',', '.') . "</td>";
-
-                // Tampilkan data "Nomor Kursi" hanya jika ada
-                if ($hasSeatNumber) {
-                    echo "<td>" . (!empty($row['seat_number']) ? htmlspecialchars($row['seat_number']) : "Kosong") . "</td>";
-                }
-
+        
+                // Tampilkan Nomor Kursi
+                echo "<td>" . (!empty($row['seat_number']) ? htmlspecialchars($row['seat_number']) : "Kosong") . "</td>";
+        
                 echo "<td>";
                 echo "<a href='invoice.php?id=" . $row['id'] . "' class='btn btn-primary btn-sm'>Detail</a> ";
                 echo "<a href='hapus.php?id=" . $row['id'] . "' class='btn btn-danger btn-sm' onclick='return confirm(\"Apakah Anda yakin ingin menghapus data ini?\")'>Hapus</a>";
                 echo "</td>";
                 echo "</tr>";
             }
-
+        
             echo "</tbody>";
             echo "</table>";
             echo "</div>";
         } else {
             echo "<div class='alert alert-warning text-center'>Belum ada data pemesanan.</div>";
         }
-
+        
         // Tutup koneksi
         $conn->close();
         ?>

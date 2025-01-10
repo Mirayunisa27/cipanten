@@ -153,7 +153,7 @@
 
   <section id="kuliner" class="py-5">
     <div class="container">
-        <h2 class="text-center mb-4">Kuliner</h2>
+        <h2 class="text-center mb-4">KULINERAN</h2>
         <div class="row g-4"></div>
         <!-- Baris 1 -->
         <div class="row g-4">

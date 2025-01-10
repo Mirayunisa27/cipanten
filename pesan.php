@@ -69,9 +69,9 @@
                                 <label class="form-check-label" for="destinasi">Destinasi</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="kulineran" name="kategori[]" value="kulineran" onchange="toggleOptions('kulineran'); updateTotal();">
-                                <label class="form-check-label" for="kulineran">Kulineran</label>
-                            </div>
+									<input class="form-check-input" type="checkbox" id="kulineran" name="kategori[]" value="kulineran" onchange="toggleOptions('kulineran'); updateTotal();">
+									<label class="form-check-label" for="kulineran">Kulineran</label>
+								</div>
                         </div>
                     </div>
                     <div id="destinasi-options" class="mb-3" style="display: none;">
@@ -85,90 +85,90 @@
                             <label class="form-check-label">Wahana Bebek Goes (Rp.15.000,00-)</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="destinasi[]" value="30000" onchange="updateTotal()">
+                            <input class="form-check-input" type="checkbox" name="destinasi[]" value="30000" data-nama="Wahana Perahu" onchange="updateTotal()">
                             <label class="form-check-label">Wahana Perahu (Rp.30.000,00-)</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="destinasi[]" value="25000" onchange="updateTotal()">
+                            <input class="form-check-input" type="checkbox" name="destinasi[]" value="25000" data-nama="wahana Sepeda Gantung" onchange="updateTotal()">
                             <label class="form-check-label">Wahana Sepeda Gantung (Rp.25.000,00-)</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="destinasi[]" value="10000" onchange="updateTotal()">
+                            <input class="form-check-input" type="checkbox" name="destinasi[]" value="10000" data-nama="Wahana Ayunan" onchange="updateTotal()">
                             <label class="form-check-label">Wahana Ayunan (Rp.10.000,00-)</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="destinasi[]" value="0" id="caffe-option" onchange="enableSeatSelection(); updateTotal()">
+                            <input class="form-check-input" type="checkbox" name="destinasi[]" value="0" id="caffe-option" data-nama="caffe" onchange="enableSeatSelection(); updateTotal()">
                             <label class="form-check-label">Caffe (Rp.0-)</label>
                         </div>
                     </div>
                     <div id="kulineran-options" class="mb-3" style="display: none;">
-                        <label class="form-label">Pilih Kulineran</label>
+                    <label class="form-label">Pilih Kulineran</label>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="pisang_crispy" value="15000" onchange="updateTotal()">
+                            <input class="form-check-input" type="checkbox" name="pisang_crispy" value="15000"  data-nama="Pisang Crispy" onchange="updateTotal()">
                             <label class="form-check-label">Pisang Crispy (Rp.15.000,00-)</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="kulineran[]" value="25000" onchange="updateTotal()">
+                            <input class="form-check-input" type="checkbox" name="kulineran[]" value="25000" data-nama="Chicken Katsu" onchange="updateTotal()">
                             <label class="form-check-label">Chicken Katsu (Rp.25.000,00-)</label>
                         </div>
 						<div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="kulineran[]" value="18000" onchange="updateTotal()">
+                            <input class="form-check-input" type="checkbox" name="kulineran[]" value="18000" data-nama="Kentang Goreng" onchange="updateTotal()">
                             <label class="form-check-label">Kentang Goreng (Rp.18.000,00-)</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="kulineran[]" value="16000" onchange="updateTotal()">
+                            <input class="form-check-input" type="checkbox" name="kulineran[]" value="16000" data-nama="Nasi Goreng" onchange="updateTotal()">
                             <label class="form-check-label">Nasi Goreng (Rp.16.000,00-)</label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="kulineran[]" value="14000" onchange="updateTotal()">
+                            <input class="form-check-input" type="checkbox" name="kulineran[]" value="14000" data-nama="Jus Alpukat" onchange="updateTotal()">
                             <label class="form-check-label">Jus Alpukat (Rp.14.000,00-)</label>
                         </div>
 						<div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="kulineran[]" value="26000" onchange="updateTotal()">
+                            <input class="form-check-input" type="checkbox" name="kulineran[]" value="26000" data-nama="Nasi Timbel" onchange="updateTotal()">
                             <label class="form-check-label">Nasi Timbel (Rp.26.000,00-)</label>
                         </div>
 						<div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="kulineran[]" value="17000" onchange="updateTotal()">
+                            <input class="form-check-input" type="checkbox" name="kulineran[]" value="17000" data-nama="Roti Bakar" onchange="updateTotal()">
                             <label class="form-check-label">Roti Bakar (Rp.17.000,00-)</label>
                         </div>
 						<div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="kulineran[]" value="19000" onchange="updateTotal()">
+                            <input class="form-check-input" type="checkbox" name="kulineran[]" value="19000" data-nama="Jus Alpukat" onchange="updateTotal()">
                             <label class="form-check-label">Jus Alpukat (Rp.19.000,00-)</label>
                         </div>
 						<div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="kulineran[]" value="11000" onchange="updateTotal()">
+                            <input class="form-check-input" type="checkbox" name="kulineran[]" value="11000" data-nama="Chocolatos"  onchange="updateTotal()">
                             <label class="form-check-label">Chocolatos (Rp.11.000,00-)</label>
                         </div>
 						<div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="kulineran[]" value="22000" onchange="updateTotal()">
+                            <input class="form-check-input" type="checkbox" name="kulineran[]" value="22000" data-nama="Waffle" onchange="updateTotal()">
                             <label class="form-check-label">Waffle (Rp.22.000,00-)</label>
                         </div>
 						<div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="kulineran[]" value="13000" onchange="updateTotal()">
+                            <input class="form-check-input" type="checkbox" name="kulineran[]" value="13000" data-nama="Jus Buah Naga" onchange="updateTotal()">
                             <label class="form-check-label">Jus Buah Naga (Rp.13.000,00-)</label>
                         </div>
 						<div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="kulineran[]" value="10000" onchange="updateTotal()">
+                            <input class="form-check-input" type="checkbox" name="kulineran[]" value="10000" data-nama="Latte Coffe" onchange="updateTotal()">
                             <label class="form-check-label">Latte Coffe (Rp.10.000,00-)</label>
                         </div>
 						<div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="kulineran[]" value="18000" onchange="updateTotal()">
+                            <input class="form-check-input" type="checkbox" name="kulineran[]" value="18000" data-nama="Flavoured Soda" onchange="updateTotal()">
                             <label class="form-check-label">Flavoured Soda (Rp.23.000,00-)</label>
                         </div>
 						<div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="kulineran[]" value="24000" onchange="updateTotal()">
+                            <input class="form-check-input" type="checkbox" name="kulineran[]" value="24000" data-nama="Mojito" onchange="updateTotal()">
                             <label class="form-check-label">Mojito (Rp.24.000,00-)</label>
                         </div>
 						<div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="kulineran[]" value="21000" onchange="updateTotal()">
+                            <input class="form-check-input" type="checkbox" name="kulineran[]" value="21000"  data-nama="Cappucino" onchange="updateTotal()">
                             <label class="form-check-label">Cappucino (Rp.21.000,00-)</label>
                         </div>
 						<div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="kulineran[]" value="27000" onchange="updateTotal()">
+                            <input class="form-check-input" type="checkbox" name="kulineran[]" value="27000" data-nama="Mocktail" onchange="updateTotal()">
                             <label class="form-check-label">Mocktail (Rp.27.000,00-)</label>
                         </div>
 						<div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="kulineran[]" value="28000" onchange="updateTotal()">
+                            <input class="form-check-input" type="checkbox" name="kulineran[]" value="28000" data-nama="Macchiato" onchange="updateTotal()">
                             <label class="form-check-label">Macchiato (Rp.28.000,00-)</label>
                         </div>
                     </div>
@@ -185,22 +185,32 @@
                             <option value="8">8</option>
                             <option value="9">9</option>
                             <option value="10">10</option>
-							<option value="1">11</option>
-                            <option value="2">12</option>
-                            <option value="3">13</option>
-                            <option value="4">14</option>
-                            <option value="5">15</option>
-                            <option value="6">16</option>
-                            <option value="7">17</option>
-                            <option value="8">18</option>
-                            <option value="9">19</option>
-                            <option value="10">20</option>
+							<option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
                         </select>
                     </div>
                     <div class="mb-3">
                         <label for="jumlah_peserta" class="form-label">Jumlah Peserta</label>
                         <input type="number" class="form-control" id="jumlah_peserta" value="1" name="jumlah_peserta" placeholder="Jumlah Hari Perjalanan" required>
                     </div>
+                    <form method="post" action="proses.php"></form>
+                    <div class="mb-3">
+                            <label for="daftar_wahana" class="form-label">Wahana yang Dipilih</label>
+                            <textarea class="form-control" id="daftar_wahana" name="daftar_wahana" readonly></textarea>
+                        </div>
+                        <form method="post" action="proses.php"></form>
+                        <div class="mb-3">
+                            <label for="daftar_kulineran" class="form-label">kulineran yang Dipilih</label>
+                            <textarea class="form-control" id="daftar_kulineran" name="daftar_kulineran" readonly></textarea>
+                        </div>
                     <div class="mb-3">
                         <label for="total_harga" class="form-label">Total Harga</label>
                         <input type="text" class="form-control" id="total_harga" name="total_harga" value="Rp.0" readonly>
@@ -220,7 +230,9 @@
 
         if (category === "destinasi") {
             destinasiOptions.style.display = document.getElementById("destinasi").checked ? "block" : "none";
-        } else if (category === "kulineran") {
+        }
+
+        if (category === "kulineran") {
             kulineranOptions.style.display = document.getElementById("kulineran").checked ? "block" : "none";
         }
     }
@@ -231,30 +243,66 @@
 
         seatSelection.style.display = caffeOption.checked ? "block" : "none";
     }
-
     function updateTotal() {
-        const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
-        const jumlahPeserta = parseInt(document.getElementById("jumlah_peserta").value) || 1; // Default 1 peserta
-        let total = 0;
+    // Mengambil elemen checkbox destinasi dan kulineran
+    const destinasiCheckboxes = document.querySelectorAll('#destinasi-options input[type="checkbox"]:checked');
+    const kulinerCheckboxes = document.querySelectorAll('#kulineran-options input[type="checkbox"]:checked');
+    const jumlahPeserta = parseInt(document.getElementById("jumlah_peserta").value) || 1;
 
-        checkboxes.forEach(checkbox => {
-            total += parseInt(checkbox.value) || 0; // Tambahkan nilai dari checkbox
-        });
+    let total = 0;
+    let daftarWahana = [];
+    let daftarKulineran = [];
 
-        total *= jumlahPeserta; // Kalikan dengan jumlah peserta
-        const formattedTotal = `Rp.${total.toLocaleString('id-ID')}`;
-        document.getElementById("total_harga").value = formattedTotal;
-    }
+    // Menghitung total dari destinasi
+    destinasiCheckboxes.forEach(checkbox => {
+        total += parseInt(checkbox.value) || 0;
+        daftarWahana.push(checkbox.getAttribute("data-nama"));
+    });
 
-    function resetTotal() {
-        document.getElementById("total_harga").value = "Rp.0";
-    }
+    // Menghitung total dari kulineran
+    kulinerCheckboxes.forEach(checkbox => {
+        total += parseInt(checkbox.value) || 0;
+        daftarKulineran.push(checkbox.getAttribute("data-nama"));
+    });
 
-    // Tambahkan event listener untuk input jumlah peserta
+    // Total dikalikan jumlah peserta
+    total *= jumlahPeserta;
+
+    // Format harga ke format IDR
+    const formattedTotal = `Rp.${total.toLocaleString('id-ID')}`;
+    
+    // Menampilkan hasil di input form
+    document.getElementById("total_harga").value = formattedTotal;
+    document.getElementById("daftar_wahana").value = daftarWahana.join(', ');
+    document.getElementById("daftar_kulineran").value = daftarKulineran.join(', '); // Untuk daftar kulineran
+}
+
+// Tambahkan event listener ke input checkbox untuk memperbarui daftar secara langsung
+document.querySelectorAll('#destinasi-options input[type="checkbox"], #kulineran-options input[type="checkbox"]').forEach(checkbox => {
+    checkbox.addEventListener('change', updateTotal);
+});
+
+// Menambahkan event listener pada jumlah peserta
+document.getElementById("jumlah_peserta").addEventListener("input", updateTotal);
+
+function resetTotal() {
+    // Mereset total harga dan daftar
+    document.getElementById("total_harga").value = "Rp.0";
+    document.getElementById("daftar_wahana").value = "";
+    document.getElementById("daftar_kulineran").value = "";
+    
+    // Mereset checkbox destinasi dan kulineran
+    const allCheckboxes = document.querySelectorAll('#destinasi-options input[type="checkbox"], #kulineran-options input[type="checkbox"]');
+    allCheckboxes.forEach(checkbox => checkbox.checked = false);
+
+    // Mereset jumlah peserta ke default
+    document.getElementById("jumlah_peserta").value = 1;
+}
+
     document.getElementById("jumlah_peserta").addEventListener("input", updateTotal);
 </script>
 
-</main>
+    </main>
 
 
 	  <footer class="footer">
